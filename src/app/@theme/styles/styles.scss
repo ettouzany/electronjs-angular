@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+// themes - our custom or/and out of the box themes
+@import 'themes';
+// framework component themes (styles tied to theme variables)
+@import '~@nebular/theme/styles/globals';
+@import '~@nebular/auth/styles/all';
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/grid';
+@import '~ngx-org-chart/_theming.scss';
+
+// loading progress bar theme
+@import './pace.theme';
+
+@import './layout';
+@import './overrides';
+
+// install the framework and custom global styles
+@include nb-install() {
+
+  // framework global styles
+  @include nb-theme-global();
+  @include nb-auth-global();
+
+  @include ngx-layout();
+  // loading progress bar
+  @include ngx-pace-theme();
+
+  @include nb-overrides();
+};
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+.md-drppicker.shown{
+  position: inherit;
+
+}
+.md-drppicker.double{
+  width: fit-content !important;
+
+}
+.nb-theme-corporate nb-option {
+  background-color: #f7f9fc !important;}
+  .ngx-org-image{
+    background-size: cover;
+    background-position: center;
+  }
+  .ngx-org-box{
+    background: white;
+  }
+  .selectioner{
+    font-size: 16px !important;
+    color: #006fd6;
+    margin: 16px;
+    display: flex;
+  }
+  .imageClass{
+    vertical-align: middle;
+    width: auto;
+    height: 42px;
+  border-radius: 12px;
+  margin: auto;
+}
